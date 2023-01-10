@@ -1,0 +1,81 @@
+@import '../variables.scss';
+
+.container {
+    width: 100vw;
+    height: 20vh;
+    //background-image: radial-gradient( rgb(30, 30, 30),#000);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    border-top: solid 1px $lightColor;
+    .images{
+        position: absolute;
+        right:  10%;
+        width: fit-content;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+        padding: 20px;
+
+        
+        .icon{
+            color: white;
+            width: 30px;
+            height: 30px;
+            transition: 0.2s;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .mediaCon {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        margin-top: 50px;
+
+        h5 {
+            color: $lightColor;
+            font-size: 1vw;
+            margin: 0;
+        }
+
+        span {
+            width: 100%;
+            height: 2px;
+            //  background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(78, 78, 78));
+            background-color: $lightColor;
+        }
+
+        ul {
+            list-style: none;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+
+            li {
+                h6 {
+                    padding: 0;
+                    margin: 0;
+
+                    font-size: 18px;
+                    color: rgb(255, 255, 255);
+                }
+            }
+        }
+
+    }
+    h1{
+        color: $lightColor;
+        position: absolute;
+        bottom: 0%;
+        margin: 0;
+        font-size: 18px;
+        font-weight: 400;
+    }
+}

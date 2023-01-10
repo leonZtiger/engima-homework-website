@@ -1,0 +1,66 @@
+@import '../variables.scss';
+
+.heading {
+   
+    padding: 0;
+    margin: 0;
+
+    .head {
+        background-color: gold;
+        width: fit-content;
+        position: relative;
+        padding-left: 10px;
+        padding-right: 10px;
+  
+        h3 {
+            font-size: 18px;
+            position: absolute;
+            top: 0;
+            left: 110%;
+        }
+
+    }
+
+
+}
+.buttomCon{
+width: 100%;
+display: flex;
+flex-direction: row;
+column-gap: 50px;
+
+.billingHistoryCon {
+
+    width: 20%;
+    max-width: 300px;
+    h2 {
+    
+    }
+.List{
+
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: $midlightColor;
+    border: 1px solid $darkColor;
+    .item{
+        margin: -1px;
+        padding-left: 10px;
+        background-color: $lightColor;
+        border: 1px solid $darkColor;
+        height: 75px;
+        width: 100%;
+    }
+}
+
+}
+
+.paymentDate {
+
+
+}    
+}
+

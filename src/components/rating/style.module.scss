@@ -1,0 +1,22 @@
+.container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+
+    p {
+             
+        margin: 0;
+        padding: 0;
+        padding-left: 10px;
+    }
+
+    .icon {
+        color: yellow;
+        width: 25px;
+        height: 25px;
+    }
+}

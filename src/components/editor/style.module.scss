@@ -1,0 +1,430 @@
+@import "../variables.scss";
+
+.filter {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(46, 46, 46, 0.617);
+
+}
+
+.showExample {
+
+    position: absolute;
+    width: 30vw;
+    height: 40vh;
+    background-color: $lightColor;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        width: 90%;
+        padding: 10px;
+        overflow-y: scroll;
+        height: 80%;
+        outline: solid 2px $darkColor;
+
+    }
+
+    .btnCon {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 20px;
+
+        button {
+
+            border: none;
+            background-color: $darkColor;
+            border-radius: 10px;
+            height: 40px;
+            width: 120px;
+            color: $lightColor;
+            font-size: 20px;
+            font-weight: 300;
+        }
+    }
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: $lightColor;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 1px $darkColor;
+
+
+    h1 {
+        font-weight: 300;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: solid 2px $darkColor;
+        padding-bottom: 5px;
+
+        .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 5px;
+        }
+    }
+
+
+    label {
+        top: -100%;
+        background: white;
+        color: #f06d06;
+        font-size: 70%;
+        padding: 1px 6px;
+        z-index: 4;
+        text-transform: uppercase;
+
+
+    }
+
+
+    input {
+        width: 70%;
+        border: 2px solid gray;
+        background: none;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        padding: 8px 12px;
+        outline: 0;
+
+        &:focus {
+            border-color: #f06d06;
+        }
+
+
+    }
+
+    h4 {
+        width: 70%;
+        padding: 0;
+        padding-left: 12px;
+        margin: 0;
+        text-align: center;
+    }
+
+    .editList {
+
+        position: relative;
+        width: 100%;
+        height: fit-content;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        border-bottom: 2px solid $darkColor;
+
+    }
+
+    .editItem {
+        margin: 0;
+        padding: 20px;
+        position: relative;
+        width: 80%;
+        height: fit-content;
+        display: inline;
+
+        h3 {
+            width: 100%;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            transition: 0.2s;
+
+            &:hover {
+                background-color: $midlightColor;
+            }
+
+            &:focus {
+                background-color: $midlightColor;
+            }
+        }
+
+
+        .switchCon {
+            position: relative;
+            display: inline-block;
+            float: left;
+            width: 40px;
+            height: 24px;
+
+
+
+            .switchInput {
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+
+            .slider {
+                border-radius: 24px;
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            .slider:before {
+                border-radius: 50%;
+                position: absolute;
+                content: "";
+                height: 20px;
+                width: 20px;
+                left: 2px;
+                bottom: 2px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            .switchInput:checked+.slider {
+                background-color: #2196F3;
+            }
+
+            .switchInput:focus+.slider {
+                box-shadow: 0 0 1px #2196F3;
+            }
+
+            .switchInput:checked+.slider:before {
+                -webkit-transform: translateX(16px);
+                -ms-transform: translateX(16px);
+                transform: translateX(16px);
+            }
+
+
+        }
+
+
+        .infoIcon {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            padding: 5px;
+            color: $midlightColor;
+            float: right;
+
+
+        }
+
+        .infoIcon:hover+.infotext {
+            opacity: 1;
+            visibility:visible;
+        }
+
+        .infotext {
+            position: absolute;
+            background-color: $lightColor;
+            box-shadow: 0 0 10px 1px $darkColor;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s ease-out 0.7s;
+            right: 0%;
+            top: calc(100% - 20px);
+
+            padding: 10px;
+            margin: 0;
+            width: 100%;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .selectTxt {
+            border: none;
+            margin-left: 20px;
+            width: fit-content;
+            padding: 5px;
+            background-color: $midlightColor;
+            float: left;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                opacity: 0.5;
+            }
+
+            &:disabled {
+                cursor: not-allowed;
+            }
+        }
+
+        .genType {
+            width: 100px;
+            position: relative;
+
+            button {
+                width: 100%;
+                height: 25px;
+                border: none;
+
+
+            }
+
+            .selected {
+                background-color: #f06d06;
+
+
+            }
+
+            &:hover .dropdown {
+                visibility: visible;
+            }
+
+            .dropdown {
+                position: absolute;
+                visibility: hidden;
+                height: fit-content;
+                width: 100%;
+            }
+        }
+    }
+
+    .bottomCon {
+
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        // align-items: flex-start;
+
+        .btnCon {
+            position: relative;
+            height: fit-content;
+            display: flex;
+            padding: 10px;
+            justify-content: flex-start;
+            align-items: center;
+
+            .openSpecs{
+                width: fit-content;
+                padding: 10px;
+                border:none;
+            }
+            .generateSpecs {
+
+                position: fixed;
+                right: 10vw;
+                top: 50vh;
+                width: 10vw;
+                height: 20vw;
+                background-color: $lightColor;
+                box-shadow: 0 0 5px 0px $midlightColor;
+                border-right: solid 2px $darkColor;
+                z-index: 2000;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+
+                .genBtn {
+
+                    border: none;
+                    background-color: $darkColor;
+                    color: $lightColor;
+                    padding: 5px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    width: fit-content;
+                    height: fit-content;
+                    font-size: 25px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    column-gap: 20px;
+                    transition: 0.2s;
+
+                    &:hover {
+                        background-color: $darkColor;
+                    }
+
+                    .loadingIcon {
+                        animation: loading 2s infinite;
+                    }
+
+                    .icon {}
+                }
+
+            }
+        }
+
+
+
+        .specimensCons {
+            width: 100%;
+            height: 100%;
+
+            background-color: rgb(208, 208, 208);
+            overflow-y: scroll;
+
+            .specimen {
+                background-color: $lightColor;
+                margin-left: 20px;
+                margin-top: 20px;
+                float: left;
+                width: 130px;
+                height: 200px;
+                outline: $darkColor 2px solid;
+                transition: 0.2s;
+
+                &:hover {
+                    // background-color: $midlightColor;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+}
+
+@keyframes loading {
+
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(-360deg);
+    }
+}
+
+@keyframes showInfo {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

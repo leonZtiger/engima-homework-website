@@ -1,0 +1,110 @@
+@import '../../components/variables.scss';
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+
+    form {
+
+        width: 25vw;
+        height: 20vw;
+        background-color: $lightColor;
+        border-radius: 10px;
+        display: grid;
+        align-items: center;
+
+        grid-template-rows: 15% 20% 5% 10% 10% 10% 15%;
+        h1 {
+            padding-bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5vw;
+            border-bottom: 3px $midlightColor solid;
+            font-weight: 300;
+            margin: 0;
+        }
+        h2{
+            justify-self: center;
+            color: red;
+            font-weight: 300;
+        }
+        p{
+            justify-self: center;
+        }
+        input {
+            width: 50%;
+            justify-self: center;
+            padding: 0;
+            border: solid rgb(203, 201, 201) 2px;           
+            background-color: $midlightColor;
+            border-radius: 10px;
+            padding: 10px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+                  
+        }
+        button{
+            width: 40%;
+            height: fit-content;
+            padding: 10px;
+            border:none;
+            justify-self: center;
+            background-color: $darkColor;
+            color: $lightColor;
+            font-size: 0.8vw;
+            transition: 0.2s;
+            box-shadow:  0 0 5px 1px $midlightColor;
+            border-radius: 10px;
+            &:hover{
+                background-color: $midlightColor;
+                color: $darkColor;
+            }
+
+        }
+        .otherLogginsCon{
+         width:100%;
+         height:100;
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         column-gap: 10px;
+         padding-bottom: 10px;
+        
+        button{
+         width: 30%;
+         height: 75px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-radius: 10px;
+         background-color: $lightColor;
+         border: 3px solid $midlightColor;
+         box-shadow:  0 0 5px 1px $midlightColor;
+         color: $darkColor;
+
+          &:last-child{
+            background-color: #4267B2;
+            color: white;
+          }
+         .icon{
+            color: white;
+         }
+         &:hover{
+            opacity: 0.6;
+        }
+         img{
+          //  float: left;
+           width: 55px;
+           height: 55px;
+           
+         }   
+         
+         }
+       
+        
+        }
+    }
+}

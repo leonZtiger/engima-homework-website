@@ -1,0 +1,339 @@
+@import '../../components/variables.scss';
+
+
+.container {
+    width: 100vw;
+
+
+    .welcomeCon {
+        height: 70vh;
+        display: flex;
+        flex-direction: row;
+
+
+        .headingCon {
+            width: 50vw;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-end;
+
+            h2 {
+                //    left: 70%;
+                //    top: 30%;
+                //    transform: translate(-50%, -50%);
+                //    position: absolute;
+                width: 20vw;
+                font-size: 3vw;
+                color: $lightColor;
+                margin-right: 10vw;
+                text-shadow: 0 0 15px $darkColor;
+                p {
+                    font-size: 1vw;
+                    font-weight: 300;
+                }
+            }
+
+            .demoCon {
+                width: 30vw;
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: row;
+                height: fit-content;
+                align-items: flex-end;
+                transition: 0.2s ease-in-out;
+
+                &:hover .icon {
+                    padding-left: 30px;
+                }
+
+                &:hover {
+                    opacity: 0.5;
+                }
+
+                h2 {
+                    margin: 0;
+                    padding: 0;
+                    width: fit-content;
+                    font-size: 2.5vw;
+                }
+
+                .icon {
+                    width: 2.5vw;
+                    height: 2.5vw;
+                    color: $lightColor;
+                    margin-left: 10px;
+                    transition: 0.2s ease-in-out;
+                }
+            }
+        }
+
+
+        .textCon {
+            width: 50vw;
+            height: 100%;
+            perspective: 800px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 20px;
+
+            .document {
+                width: 70%;
+                height: 60%;
+                transform: rotate3d(0, 1, 0, -15deg);
+                background-color: $lightColor;
+                animation: loading 1s;
+                transition: 0.2s ease;
+                border-radius: 5px;
+
+                &:hover {
+                    transform: rotate3d(0, 1, 0, 0deg);
+                }
+
+                h2 {
+                    color: black;
+                    font-size: 1vw;
+                    font-weight: 400;
+                    padding: 20px;
+
+                }
+
+            }
+
+            p {
+
+                font-size: 1vw;
+                color: $lightColor;
+            }
+        }
+    }
+
+    .mainCon {
+
+        width: 100vw;
+        background-color: $lightColor;
+        height: 150vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        row-gap: 50px;
+        position: relative;
+
+
+
+        h2 {
+            margin: 0;
+            padding: 0;
+            color: black;
+            font-size: 2vw;
+            width: 100%;
+            text-align: center;
+        }
+
+        h3 {
+            margin: 0;
+            padding: 0;
+            color: $darkColor;
+        }
+
+        .contentCon {
+            width: fit-content;
+            // max-width: 1000px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: -5%;
+            row-gap: 50px;
+            align-items: center;
+
+            .cardsCon {
+                width: fit-content;
+                // max-width: 1000px;
+                height: fit-content;
+                display: grid;
+                grid-template-columns: auto auto;
+                row-gap: 2vw;
+                column-gap: 2vw;
+                position: relative;
+
+
+                .card {
+                    width: 20vw;
+                    height: 15vw;
+                    border-radius: 9px;
+                    display: flex;
+                    flex-direction: column;
+                    //   justify-content: center;
+                    transition: 0.2s;
+                    //     box-shadow: 0 0 10px 1px rgb(114, 114, 114);
+                    overflow: hidden;
+                    position: relative;
+                    transition: 0.2s;
+
+
+                    &:hover {
+                        //    transform: scale(101%);
+                        //    box-shadow: 0 0 10px 3px rgb(169, 169, 169);
+
+                    }
+
+                    .icon {
+                        width: 25px;
+                        height: 25px;
+                        //     position: absolute;
+
+                        padding: 10px;
+                    }
+
+                    h5 {
+                        width: 100%;
+                        text-align: left;
+                        padding: 20px;
+                        margin: 0;
+                        //  position: absolute;
+                        color: rgb(251, 251, 251);
+                        font-size: 1.5vw;
+                    }
+
+                    .aboutCon {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+
+                        button {
+
+                            width: 90%;
+                            border-radius: 8px;
+                            border: none;
+                            height: 40px;
+                            background-color: $lightColor;
+                            font-size: larger;
+                            font-weight: 500;
+                            color: $darkColor;
+                            transition: 0.2s;
+
+                            &:hover {
+                                color: white;
+                                background-color: black;
+                            }
+                        }
+
+                        p {
+                            font-size: larger;
+                            color: $lightColor;
+                            height: 50%;
+                            width: 90%;
+                            text-align: left;
+                        }
+                    }
+
+                }
+            }
+
+            h1 {
+                text-align: center;
+                width: 100%;
+                font-size: 1.5vw;
+                font-weight: 400;
+                //   text-decoration-line: underline;
+
+
+            }
+
+
+            .membershipCon {
+                width: 50vw;
+                height: fit-content;
+                //      background-color: rgb(202, 202, 202);
+                border-radius: 8px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+
+
+                p {
+                    width: 50%;
+                    font-size: 0.8vw;
+                    text-align: center;
+                }
+
+            }
+
+            table {
+                //   background-color: rgb(209, 209, 209);
+                width: fit-content;
+                border-collapse: collapse;
+
+                tr {
+
+                   &:nth-child(even)
+                   {
+                    background-color: rgb(235, 235, 235);
+                   }
+
+                    .tdhead {
+                        color: #fff;
+                        font-size: 0.9vw;
+
+                        &:nth-child(3) {
+                            color: silver;
+                           }
+                        &:nth-child(4) {
+                         color: goldenrod;
+                        }
+                    }
+
+                    &:first-child {
+                        background-color: black;
+                    }
+                }
+
+
+                th,
+                td {
+                    width: 6vw;
+                    height: 50px;
+                    font-size: larger;
+                    padding-right: 5px;
+                    border-right: 2px solid rgb(199, 199, 199);
+                    border-bottom: 2px solid rgb(199, 199, 199);
+                }
+
+                th {
+                    text-align: left;
+                    padding-left: 5px;
+                }
+
+                td {
+                    text-align: center;
+                }
+
+            }
+        }
+
+
+    }
+}
+
+@keyframes loading {
+
+    0% {
+        transform: rotate3d(0, 1, 0, 0deg);
+    }
+
+    100% {
+        transform: rotate3d(0, 1, 0, -15deg);
+    }
+}
