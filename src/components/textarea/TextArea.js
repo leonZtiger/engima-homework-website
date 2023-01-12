@@ -10,13 +10,13 @@ function TextArea(props) {
     const [outText, setOutText] = useState("")
 
     function onChange(e) {
-        //  setText(e.target.value)
         setwordCount(e.target.value.split(" ").filter((item) => { return item != '' }).length);
         const start = e.target.selectionStart;
         const end = e.target.selectionEnd;
-        //  setText(`aabcs ${<mark>awdawdawd</mark>}awdawdawd awdawd`)
+        props.sethighlight({ text: e.target.value.substring(start, end), start: start, end: end });
+ console.log("bruh")
         props.setText(e.target.value)
-        setHighLight(start, end, props.text, settrueText)
+        setHighLight(start, end, e.target.value, settrueText)
     }
 
     function onHighlight(e) {
@@ -24,7 +24,8 @@ function TextArea(props) {
         const end = e.target.selectionEnd;
         props.sethighlight({ text: props.text.substring(start, end), start: start, end: end });
 
-        setHighLight(start, end, props.text, settrueText)
+        setHighLight(start, end, e.target.value, settrueText)
+   
     }
     function setHighLight(start, end, text, setter) {
 
@@ -33,7 +34,7 @@ function TextArea(props) {
             textArr.splice(start, 0, "<mark id='markHighlight'>")
             textArr.splice(end + 1, 0, "</mark>");
         }
-        textArr.splice(start, 0, `<span  class='typeBar'></span>`)
+        textArr.splice(start, 0, `<span id="typebar"  class='typeBar'></span>`)
         var newText = "";
         for (let index = 0; index < textArr.length; index++) {
             if (textArr[index] === " ")
@@ -49,7 +50,9 @@ function TextArea(props) {
         if (props.displaySpecimenText) {
 
             if (props.highlight.start == props.highlight.end) {
-                return
+                
+                setOutText(props.displaySpecimenText)
+                return;
             }
 
             const tempTxtStart = props.text.substring(0, props.highlight.start);
