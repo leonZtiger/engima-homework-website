@@ -12,7 +12,7 @@ function Rating({rating}) {
 
             {
                 stars.map((value)=>(
-                  value==1?(
+                  value===1?(
                   <AiFillStar className={classes.icon}/>
                   ):(
                  <AiOutlineStar className={classes.icon}/>

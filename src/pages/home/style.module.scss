@@ -3,13 +3,14 @@
 
 .container {
     width: 100vw;
-
+    height: 100%;
+    overflow: hidden;
 
     .welcomeCon {
+        width: 100%;
         height: 70vh;
         display: flex;
         flex-direction: row;
-
 
         .headingCon {
             width: 50vw;
@@ -97,7 +98,7 @@
 
                 h2 {
                     color: black;
-                    font-size: 1vw;
+                    font-size: 0.84vw;
                     font-weight: 400;
                     padding: 20px;
 
@@ -116,8 +117,8 @@
     .mainCon {
 
         width: 100vw;
-        background-color: $lightColor;
-        height: 150vh;
+        background-color: none;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -125,8 +126,13 @@
         row-gap: 50px;
         position: relative;
 
-
-
+        .background{
+            background-color: $lightColor;
+            position: absolute;
+            width: 100vw;
+            height: 95%;
+            top: 5vw;
+        }
         h2 {
             margin: 0;
             padding: 0;
@@ -148,7 +154,7 @@
             height: fit-content;
             display: flex;
             flex-direction: column;
-            position: absolute;
+            position: relative;
             top: -5%;
             row-gap: 50px;
             align-items: center;
@@ -213,10 +219,13 @@
 
                         button {
 
-                            width: 90%;
+                            width: fit-content;
                             border-radius: 8px;
+                            padding-left: 10px;
+                            padding-right: 10px;
                             border: none;
-                            height: 40px;
+                            height: fit-content;
+                        
                             background-color: $lightColor;
                             font-size: larger;
                             font-weight: 500;
@@ -275,6 +284,7 @@
                 //   background-color: rgb(209, 209, 209);
                 width: fit-content;
                 border-collapse: collapse;
+                height: 100%;
 
                 tr {
 

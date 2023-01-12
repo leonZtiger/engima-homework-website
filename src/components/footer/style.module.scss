@@ -2,18 +2,19 @@
 
 .container {
     width: 100vw;
-    height: 20vh;
+    height: 10vw;
     //background-image: radial-gradient( rgb(30, 30, 30),#000);
     display: flex;
     flex-direction: row;
     justify-content: center;
     position: relative;
     border-top: solid 1px $lightColor;
+    
     .images{
         position: absolute;
         right:  10%;
         width: fit-content;
-        height: 50px;
+        height: 2vw;
         display: flex;
         flex-direction: row;
         column-gap: 20px;
@@ -37,7 +38,7 @@
         width: fit-content;
         padding-left: 2vw;
         padding-right: 2vw;
-        margin-top: 50px;
+        margin-top: 2vw;
 
         h5 {
             color: $lightColor;
@@ -63,7 +64,7 @@
                     padding: 0;
                     margin: 0;
 
-                    font-size: 18px;
+                    font-size: 0.8vw;
                     color: rgb(255, 255, 255);
                 }
             }
@@ -73,9 +74,9 @@
     h1{
         color: $lightColor;
         position: absolute;
-        bottom: 0%;
+        bottom: 0;
         margin: 0;
-        font-size: 18px;
+        font-size: 1vw;
         font-weight: 400;
     }
 }

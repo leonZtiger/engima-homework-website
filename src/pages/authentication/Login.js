@@ -58,13 +58,8 @@ function Login() {
             
         }).catch((error) => {
            setError(error.message)
-        })
-        
+        })   
     }
-    useEffect(() => {
-   
-     
-    }, [])
 
     return (
         <div className={classes.container}>
