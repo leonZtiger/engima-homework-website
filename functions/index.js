@@ -7,13 +7,13 @@ const app = express();
 app.use(cors({ origin: true }));
 
 const memberships = {
- gold:{
-   maxInvocationsPerMonth: 50
+  gold: {
+    maxInvocationsPerMonth: 50
   },
-  silver:{
+  silver: {
     maxInvocationsPerMonth: 20
   },
-  free:{
+  free: {
     maxInvocationsPerMonth: 10
   }
 }
@@ -22,34 +22,64 @@ const memberships = {
 app.get("/generateText", (req, res) => {
   const userDoc = admin.firestore().doc("users/" + req.uid);
 
+  //check authorization
   if (!userDoc) {
     res.send("user doesnt exist").status(403);
     return;
   }
 
+  // check membership
   const user = userDoc.get().then((doc) => {
     return doc;
   })
   var userPrivleges = getPrivlege(user.uid);
 
-  if(!userPrivleges){
-    res.send("membership doesnt exist").status(403);
+  if (!userPrivleges) {
+    res.send("could not find membership").status(403);
   }
 
-  const genType = req.type;
+  var text;
   
+    switch (req.type) {
+      case "rewrite":
+       text = ReWriteText(req)
+        break;
+      case "write":
+        text = WriteText(req)
+        break;
+      case "paraphrase":
+        text = ParaphraseText(req)
+        break;
+      
+      default:
+        
+      res.send("faild to read writing-type").status(500)
+        break;
+    }
+   
+  // remove coresponding invocations on the user account  
+  removeInvocationFromUser(userDoc) 
 
-  //  const text = req.text;
-  res.json({ uid: uid, text: "bruh" }).send().status(200);
+  res.json({ text: text }).send().status(200);
 });
 
-function TextWrite(specs){
+function WriteText(specs) {
+    
+  
+// write text based on previuse context
+  if(specs.settnings.keepWriting)
+  {
+   
+  }
+  //else write a new text
+  else{
+
+  }
+}
+function ReWriteText(specs) {
 
 }
-function TextReWrite(specs){
-
-}
-function TextParaphrase(specs){
+function ParaphraseText(specs) {
 
 }
 
@@ -71,7 +101,7 @@ function getPrivlege(uid) {
         specimens: 2,
         avaibleInvocations: user.avaibleInvocations,
       }
-     
+
 
     case ("silver"):
       return {
@@ -86,10 +116,10 @@ function getPrivlege(uid) {
         specimens: 5,
         avaibleInvocations: user.avaibleInvocations,
       }
-     
+
     default:
       return false;
-      
+
   }
 }
 

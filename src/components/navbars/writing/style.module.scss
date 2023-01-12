@@ -4,7 +4,7 @@
     width: 100vw;
     height: 5vw;
     max-height: 100px;
-    
+
     ul {
         list-style: none;
         display: flex;
@@ -31,12 +31,16 @@
             transition: 0.2s ease-in-out;
 
             h1,
-            h2,
+
             .icon {
                 font-size: 1.7vw;
                 margin: 0;
                 padding: 0;
                 color: $lightColor;
+
+                @media (min-width: $big-screen) {
+                    font-size: 1vw;
+                }
             }
 
 
@@ -59,7 +63,7 @@
     }
 
     .profileCon {
-        max-width: 150px;
+        max-width: 140px;
         max-height: 40px;
         height: 2vw;
         width: 7vw;
@@ -71,20 +75,34 @@
         flex-direction: row;
         align-items: center;
         justify-content: flex-end;
-       // &:hover{
-       //     width: 200px;
-       // }
-       h5{
-       text-align: center;
-       width: 100%;
-       margin: 0;
-       font-size: 1vw;
-       color: $darkColor;
-       }
-       .icon{
-         width: 2vw;
-         height: 2vw;
-         color: $darkColor;
-       }
+
+        // &:hover{
+        //     width: 200px;
+        // }
+        h5 {
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            font-size: 1vw;
+            color: $darkColor;
+
+            @media (min-width: $big-screen) {
+                width: 2vw;
+                font-size: 0.4vw;
+               justify-self: center;
+            }
+        }
+
+        .icon {
+            width: 2vw;
+            height: 2vw;
+            color: $darkColor;
+
+            @media (min-width: $big-screen) {
+
+                width: 40px;
+                height: 40px;
+            }
+        }
     }
 }

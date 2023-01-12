@@ -17,7 +17,7 @@ function Editor(props) {
   const [showSpecs, setShowSpecs] = useState(false)
   const types = [{ type: "Selecte type" }, { type: "Paraphrase" }, { type: "Writer" }, { type: "Rewriter" }]
   const [selected, setSelected] = useState(types[0].type)
-  const [fontSize, setfontSize] = useState(12)
+  const [fontSize, setfontSize] = useState(14)
   const [wordlength, setwordlength] = useState(200)
 
   const [creativity, setCreativity] = useState(50)
@@ -47,9 +47,7 @@ function Editor(props) {
     }).then((response) => {
 
       console.log(response.data.text, response.data.uid)
-      
       setSpecimens(response.specimens)
-      
       setLoading(false)
       alert("Writing is completed!")
     })
@@ -60,10 +58,12 @@ function Editor(props) {
 
 
   function setInputVal(e, variable) {
-    if (e.target.type = "number")
-      if (parseInt(e.target.value) >= 90)
-        variable(89)
-      else
+      if (e.target.id==="font-size" && parseInt(e.target.value) >= 90)
+      {
+       variable(89)
+        return  
+      }
+       
         variable(parseInt(e.target.value));
   }
 
@@ -73,14 +73,6 @@ function Editor(props) {
   //    return
  //   }
   }
-  useEffect(() => {
-
-    if (useSelect) {
-      // add selection button
-    }
-
-
-  }, [useSelect])
 
   useEffect(() => {
     console.log(fontSize)
@@ -115,9 +107,9 @@ function Editor(props) {
 
           <li className={classes.editItem}>
             <h3>Text align</h3>
-            <GrTextAlignFull onClick={(event) => {document.getElementById("text").style.textAlign = "left";document.getElementById("textarea").style.textAlign = "left"}} className={classes.icon} />
-            <GrTextAlignCenter onClick={(event) => {document.getElementById("text").style.textAlign = "center";document.getElementById("textarea").style.textAlign = "center"}} className={classes.icon} />
-            <GrTextAlignRight onClick={(event) => {document.getElementById("text").style.textAlign = "right";document.getElementById("textarea").style.textAlign = "right"}} className={classes.icon} />
+            <GrTextAlignFull onClick={(event) => {document.getElementById("text").style.textAlign = "left";document.getElementById("textarea").style.textAlign = "left"}} className={classes.texticon} />
+            <GrTextAlignCenter onClick={(event) => {document.getElementById("text").style.textAlign = "center";document.getElementById("textarea").style.textAlign = "center"}} className={classes.texticon} />
+            <GrTextAlignRight onClick={(event) => {document.getElementById("text").style.textAlign = "right";document.getElementById("textarea").style.textAlign = "right"}} className={classes.texticon} />
             <AiFillInfoCircle className={classes.infoIcon} />
             <p className={classes.infotext}>Set the alignment of your text</p>
           </li>
@@ -131,8 +123,7 @@ function Editor(props) {
                   <input value={useSelect ? "on" : "off"} onClick={(e) => { setuseSelect(!useSelect); console.log(useSelect) }} className={classes.switchInput} type="checkbox" />
                   <span className={classes.slider}></span>
                 </div>
-
-
+                   
                     <AiFillInfoCircle className={classes.infoIcon} />
                     <p className={classes.infotext}>When used a whole new text will be regenerated. If not the AI will keep writing forward of the text</p>
 
@@ -150,7 +141,7 @@ function Editor(props) {
               <li className={classes.editItem}>
                 <label for="maxlength" className={classes.editLabel}>
                   max word-length</label>
-                <input type={"number"} value={fontSize} id="maxlength" name="maxlength" onChange={(e) => setInputVal(e, setfontSize)} />
+                <input type={"number"} value={wordlength} id="maxlength" name="maxlength" onChange={(e) => setInputVal(e, setwordlength)} />
                 <AiFillInfoCircle className={classes.infoIcon} />
                 <p className={classes.infotext}>Max word count when generating</p>
 
@@ -158,14 +149,18 @@ function Editor(props) {
 
               <li className={classes.editItem}>
                 <h3>
-                  Generation type
+                  Writer type
                 </h3>
                 <div className={classes.genType}>
-                  <button className={classes.selected}>Paraphrase</button>
+                  <button className={classes.selected}>{selected}</button>
                   <div className={classes.dropdown}>
-                    <button>Paraphrase</button>
-                    <button>a</button>
-                    <button>Paraphrase</button>
+                    {
+                      types.map((type)=>{
+                        if(type.type !== selected)
+                        return( <button onClick={()=>setSelected(type.type)}>{type.type}</button>)
+                      })
+                    }
+                   
                   </div>
                 </div>
 
@@ -174,12 +169,12 @@ function Editor(props) {
                     <p className={classes.infotext}>When used a whole new text will be regenerated. If not the AI will keep writing forward of the text</p>
 
               </li>
-
+              <li className={classes.editItem}>
               <button onClick={() => generateSpecimens()} className={classes.genBtn}>
                 Generate text
                 <TfiReload className={loading ? classes.loadingIcon : classes.icon} />
               </button>
-
+             </li>
             </ul>
          
 

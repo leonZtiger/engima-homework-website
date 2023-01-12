@@ -11,7 +11,7 @@ function WritingNavbar() {
                 <li>
                     
                     <AiOutlineArrowLeft className={classes.icon} />
-                    <h2>back</h2>
+                    <h1>back</h1>
                      
                 </li>
                </a>

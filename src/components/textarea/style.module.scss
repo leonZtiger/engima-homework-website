@@ -6,7 +6,7 @@
 }
 
 .container {
-    padding: 100px;
+    padding: 52px;
     width: 70%;
     height: 100vh;
     display: flex;
@@ -14,6 +14,9 @@
     row-gap: 50px;
     background-color: $lightColor;
 
+    @media (min-width:$big-screen) {
+        padding: 50px;
+    }
     .textCon {
         width: 100%;
         position: relative;
@@ -42,7 +45,7 @@
         }
 
         mark {
-            background-color: orange;
+            background-color: rgba(26, 110, 228, 0.43);
         }
 
         .textarea {

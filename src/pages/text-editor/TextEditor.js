@@ -11,7 +11,7 @@ function TextEditor() {
 
   const { type } = useParams();
   const { user } = useContext(userContext)
-  const [text, setText] = useState("jeds")
+  const [text, setText] = useState("")
   const [highlight, sethighlight] = useState({ text: "", start: 0, end: 0 })
   const [displaySpecimenText, setdisplaySpecimenText] = useState(undefined);
   

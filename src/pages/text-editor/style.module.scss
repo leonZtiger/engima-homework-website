@@ -3,17 +3,21 @@
 .container {
 
     position: relative;
-    height: calc(100vh - 5vw);
+    height: calc(100vh - 3vw);
     display: grid;
     grid-template-columns: 20vw 60vw 20vw;
     //  overflow: hidden;
     overflow-y: hidden;
- 
+    @media (min-width: $big-screen) {
+           
+        height: calc(100vh - 100px);
+    }
     .console {
         position: relative;
         height: 100%;
         width: 100%;
         z-index: 100;
+
     }
 
    

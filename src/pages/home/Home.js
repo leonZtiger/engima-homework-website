@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classes from './style.module.scss'
 import Typewriter from 'typewriter-effect'
-import test_image from '../../poem.png'
-import { BsFillPencilFill } from 'react-icons/bs'
 import Rating from "../../components/rating/Rating";
 import { HiArrowRight } from 'react-icons/hi'
 import {writingTypes} from '../../data.js';
