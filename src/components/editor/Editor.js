@@ -101,18 +101,8 @@ function Editor(props) {
 
   return (
     <>
-      {/*
-      <div className={classes.filter} style={{ display: showSpecimen ? "block" : "none" }} />
-      <div className={classes.showExample} style={{ display: showSpecimen ? "flex" : "none" }}>
-        <p>
-          {chosenSpecimen}
-        </p>
-        <div className={classes.btnCon}>
-          <button onClick={() => { props.setText(chosenSpecimen); setshowSpecimen(false) }}>Use</button>
-          <button onClick={() => setshowSpecimen(false)}>cancel</button>
-        </div>
-      </div>
-        */}
+      
+      
       <div className={classes.container}>
 
         <h1>Edit panel</h1>
