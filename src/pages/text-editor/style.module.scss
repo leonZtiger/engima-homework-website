@@ -3,23 +3,17 @@
 .container {
 
     position: relative;
-    height: 96vh;
+    height: calc(100vh - 5vw);
     display: grid;
-    grid-template-columns: 20vw 70vw 10vw;
-
-    justify-content: baseline;
-    align-items: baseline;
+    grid-template-columns: 20vw 60vw 20vw;
     //  overflow: hidden;
     overflow-y: hidden;
  
     .console {
+        position: relative;
         height: 100%;
         width: 100%;
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        justify-content: baseline;
-
+        z-index: 100;
     }
 
    

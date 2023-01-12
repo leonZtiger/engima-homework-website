@@ -7,7 +7,9 @@ import {AiFillTwitterCircle} from 'react-icons/ai';
 
 
 function Footer() {
+
     return (
+        
         <div className={classes.container}>
             <div className={classes.images}>
                <AiFillTwitterCircle className={classes.icon}/>

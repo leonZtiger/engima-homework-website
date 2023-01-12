@@ -15,7 +15,8 @@ import Signup from './pages/authentication/Signup.js'
 
 function App() {
 
-  return (<AuthContext>
+  return (
+  <AuthContext>
     <BrowserRouter>
 
       <Routes>

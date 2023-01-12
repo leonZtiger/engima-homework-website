@@ -57,6 +57,8 @@ function Home() {
             </div>
 
             <div className={classes.mainCon}>
+                <div className={classes.background}/>
+                
                 <div className={classes.contentCon}>
                     <div className={classes.cardsCon}>
                         {
@@ -68,15 +70,10 @@ function Home() {
                                     <h5>
                                         Poem writter
                                     </h5>
-
-
-
-
                                     <div className={classes.aboutCon}>
-
-
                                         <p>Create a well written poem</p>
-                                        <button>Create </button>
+                                        
+                                        <button>Create</button>
                                         <Rating />
                                     </div>
                                 </div>

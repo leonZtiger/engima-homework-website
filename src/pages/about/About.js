@@ -8,8 +8,7 @@ function About() {
             <div className={classes.welcomeCon}>
                 <h1>About us</h1>
                 <div className={classes.textDocumentsCon}>
-               
-
+            
                 </div>
 
             </div>

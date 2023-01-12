@@ -97,32 +97,20 @@ function Editor(props){
           </li>
 
           <li className={classes.editItem}>
-            <h3>Text align</h3>
+          
             <GrTextAlignFull onClick={(event) => {document.getElementById("text").style.textAlign = "left";document.getElementById("textarea").style.textAlign = "left"}} className={classes.icon} />
             <GrTextAlignCenter onClick={(event) => {document.getElementById("text").style.textAlign = "center";document.getElementById("textarea").style.textAlign = "center"}} className={classes.icon} />
             <GrTextAlignRight onClick={(event) => {document.getElementById("text").style.textAlign = "right";document.getElementById("textarea").style.textAlign = "right"}} className={classes.icon} />
             <AiFillInfoCircle className={classes.infoIcon} />
             <p className={classes.infotext}>Set the alignment of your text</p>
           </li>
-        </ul>
+        
 
-        <div className={classes.bottomCon}>
-
-          <div className={classes.btnCon}>
-            <button onClick={()=>setShowSpecs(!showSpecs)} className={classes.openSpecs}>
-              Generate text
-            </button>
-            {
-              showSpecs?
-                 <div className={classes.generateSpecs}>
-              <h1>generation specs
-                <RxDoubleArrowRight onClick={()=>setShowSpecs(!showSpecs)} className={classes.icon} />
-              </h1>
-
-              <div className={classes.editItem}>
-                <h3>
+              <li className={classes.editItem}>
+              <h3>
                   use selected text</h3>
                 <div className={classes.switchCon}>
+                  
                   <input value={useSelect ? "on" : "off"} onClick={(e) => { setuseSelect(!useSelect); console.log(useSelect) }} className={classes.switchInput} type="checkbox" />
                   <span className={classes.slider}></span>
                 </div>
@@ -131,9 +119,9 @@ function Editor(props){
                 <AiFillInfoCircle className={classes.infoIcon} />
                 <p className={classes.infotext}>When used a whole new text will be regenerated. If not the AI will keep writing forward of the text</p>
 
-              </div>
+              </li>
 
-              <div className={classes.editItem}>
+              <li className={classes.editItem}>
                 <label for="creativity" className={classes.editLabel}>
                   creativity</label>
                 <h4>{creativity}</h4>
@@ -141,17 +129,17 @@ function Editor(props){
                 <AiFillInfoCircle className={classes.infoIcon} />
                 <p className={classes.infotext}>How creative the AI will be when writing. 0 equals very low and 100 equals super random. 50 is recommended for starters</p>
 
-              </div>
-              <div className={classes.editItem}>
+              </li>
+              <li className={classes.editItem}>
                 <label for="maxlength" className={classes.editLabel}>
                   max word-length</label>
                 <input type={"number"} value={fontSize} id="maxlength" name="maxlength" onChange={(e) => setInputVal(e, setfontSize)} />
                 <AiFillInfoCircle className={classes.infoIcon} />
                 <p className={classes.infotext}>Max word count when generating</p>
 
-              </div>
+              </li>
 
-              <div className={classes.editItem}>
+              <li className={classes.editItem}>
                 <h3>
                   Generation type
                 </h3>
@@ -168,19 +156,16 @@ function Editor(props){
                 <AiFillInfoCircle className={classes.infoIcon} />
                 <p className={classes.infotext}>When used a whole new text will be regenerated. If not the AI will keep writing forward of the text</p>
 
-              </div>
+              </li>
 
               <button onClick={() => generateSpecimens()} className={classes.genBtn}>
                 Generate text
                 <TfiReload className={loading ? classes.loadingIcon : classes.icon} />
               </button>
-
-            </div>:
-            null
-            }
          
-          </div>
+        </ul>
 
+        <div className={classes.bottomCon}>
           <h1>specimens</h1>
           <div className={classes.specimensCons}>
             {
