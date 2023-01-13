@@ -11,18 +11,13 @@ function Editor(props) {
   const { user } = useContext(userContext)
 
   const [loading, setLoading] = useState(false)
-  const [downloadAmount, setdownload] = useState(10)
   const [specimens, setSpecimens] = useState(["awd", "dawd", "daw"])
   const [useSelect, setuseSelect] = useState(false)
-  const [showSpecs, setShowSpecs] = useState(false)
-  const types = [{ type: "Selecte type" }, { type: "Paraphrase" }, { type: "Writer" }, { type: "Rewriter" }]
+  const types = [{ type: "Select type" }, { type: "Paraphrase" }, { type: "Writer" }, { type: "Rewriter" }]
   const [selected, setSelected] = useState(types[0].type)
   const [fontSize, setfontSize] = useState(14)
   const [wordlength, setwordlength] = useState(200)
-
   const [creativity, setCreativity] = useState(50)
-  var maxLength = 200;
-  var url = "";
 
   function generateSpecimens() {
     setLoading(true)
@@ -46,13 +41,13 @@ function Editor(props) {
       }
     }).then((response) => {
 
-      console.log(response.data.text, response.data.uid)
       setSpecimens(response.specimens)
       setLoading(false)
       alert("Writing is completed!")
     })
       .catch((error) => {
         alert(error)
+        setLoading(false); 
       })
   }
 
@@ -84,8 +79,6 @@ function Editor(props) {
 
   }, [fontSize])
 
-
-
   return (
     <>
      
@@ -94,9 +87,7 @@ function Editor(props) {
         <h1>Edit panel</h1>
 
         <ul className={classes.editList}>
-
-
-          <li className={classes.editItem}>
+         <li className={classes.editItem}>
             <label for="font-size" className={classes.editLabel}>
               font size</label>
             <input type={"number"} value={fontSize} id="font-size" name="font-size" onChange={(e) => setInputVal(e, setfontSize)} />
@@ -133,7 +124,7 @@ function Editor(props) {
                 <label for="creativity" className={classes.editLabel}>
                   creativity</label>
                 <h4>{creativity}</h4>
-                <input value={creativity} onChange={(e) => setCreativity(e.target.value)} step={"10"} type={"range"} id="creativity" name="creativity" />
+                <input value={creativity} onChange={(e) => setCreativity(e.target.value)} step={"5"} min="0" max="100" type={"range"} id="creativity" name="creativity" />
                 <AiFillInfoCircle className={classes.infoIcon} />
                 <p className={classes.infotext}>How creative the AI will be when writing. 0 equals very low and 100 equals super random. 50 is recommended for starters</p>
 
@@ -179,7 +170,7 @@ function Editor(props) {
          
 
 
-        <div className={classes.bottomCon}>
+       
           <h1>specimens</h1>
           <div className={classes.specimensCons}>
             {
@@ -189,7 +180,7 @@ function Editor(props) {
                 </div>
               ))
             }
-          </div>
+        
         </div>
       </div>
     </>

@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useContext ,useEffect} from "react";
 import classes from './style.module.scss'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { RxAvatar } from 'react-icons/rx'
+import {userContext} from "../../AuthContext";
+import {GiTwoCoins} from 'react-icons/gi';
 
 function WritingNavbar() {
+
+    const {user} = useContext(userContext)
+ 
+    
+    useEffect(() => {
+      
+    console.log(user);
+   
+    }, [user])
+    
     return (
         <div className={classes.container}>
             <ul>
@@ -21,7 +33,16 @@ function WritingNavbar() {
                 <li>
                     <a onClick={(e)=>  window.location.href="/profile"} >
                     <div className={classes.profileCon}>
-                        <h5>user1234</h5>
+                        <h5>{user && user.displayName.split(" ")[0]}</h5>
+                       {
+                        /* 
+                        <p>
+                            10
+                             <GiTwoCoins className={classes.token} />
+                        </p> 
+                        */
+                       } 
+                      
                         <RxAvatar className={classes.icon} />
                     </div>
                     </a>

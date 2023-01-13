@@ -33,10 +33,11 @@
             h1,
 
             .icon {
-                font-size: 1.7vw;
+                font-size: 1.4vw;
                 margin: 0;
                 padding: 0;
                 color: $lightColor;
+                font-weight: 400;
 
                 @media (min-width: $big-screen) {
                     font-size: 1vw;
@@ -74,18 +75,20 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between;
 
-        // &:hover{
-        //     width: 200px;
-        // }
         h5 {
             text-align: center;
-            width: 100%;
             margin: 0;
-            font-size: 1vw;
+            font-size: 0.9vw;
             color: $darkColor;
-
+            text-overflow: ellipsis;
+            height: 1vw;
+            width: 60%;
+            margin-left: 5px;
+            overflow: hidden;
+            white-space: nowrap;
+            
             @media (min-width: $big-screen) {
                 width: 2vw;
                 font-size: 0.4vw;
@@ -93,16 +96,20 @@
             }
         }
 
-        .icon {
+        .icon,.token {
             width: 2vw;
             height: 2vw;
-            color: $darkColor;
-
+           
             @media (min-width: $big-screen) {
 
                 width: 40px;
                 height: 40px;
             }
         }
+        .icon{
+             color: $darkColor;
+              
+        }
+        
     }
 }

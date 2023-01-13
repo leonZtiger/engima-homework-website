@@ -14,7 +14,6 @@ function TextArea(props) {
         const start = e.target.selectionStart;
         const end = e.target.selectionEnd;
         props.sethighlight({ text: e.target.value.substring(start, end), start: start, end: end });
- console.log("bruh")
         props.setText(e.target.value)
         setHighLight(start, end, e.target.value, settrueText)
     }
@@ -30,7 +29,7 @@ function TextArea(props) {
     function setHighLight(start, end, text, setter) {
 
         const textArr = text.split("");
-        if (start != end) {
+        if (start !== end) {
             textArr.splice(start, 0, "<mark id='markHighlight'>")
             textArr.splice(end + 1, 0, "</mark>");
         }
@@ -49,7 +48,7 @@ function TextArea(props) {
 
         if (props.displaySpecimenText) {
 
-            if (props.highlight.start == props.highlight.end) {
+            if (props.highlight.start === props.highlight.end) {
                 
                 setOutText(props.displaySpecimenText)
                 return;
@@ -61,7 +60,7 @@ function TextArea(props) {
             setHighLight(props.highlight.start, props.displaySpecimenText.length, exampleInTxt, setOutText)
         }
         else {
-            if (props.text == "")
+            if (props.text === "")
                 setOutText('Imangination starts here...')
             else
                 setOutText(trueText)
@@ -79,9 +78,8 @@ function TextArea(props) {
 
     return (
         <div className={classes.container}>
-            <h1 contentEditable>bruh</h1>
             <div className={classes.textCon}>
-                <h2>{ }</h2>
+            
                 <div className='textCon'>
                     <textarea
                         id="textarea"

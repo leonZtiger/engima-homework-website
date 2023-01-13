@@ -45,10 +45,19 @@
             height: fit-content;
             border: solid rgb(203, 201, 201) 2px;           
             background-color: $midlightColor;
-            border-radius: 10px;
-            padding: 10px;
+            border-radius: 5px;
+            padding: 5px;
             margin-top: 10px;
-                  
+           outline: none;
+           &:focus{
+            outline: 1px solid $darkColor;
+           }
+            @media (min-width:$big-screen) {
+               padding: 10px;
+               border-radius: 10px;
+
+             }
+             
         }
         button{
             width: 40%;
@@ -60,7 +69,7 @@
             color: $lightColor;
             font-size: 0.8vw;
             transition: 0.2s;
-            box-shadow:  0 0 5px 1px $midlightColor;
+            box-shadow:  0 0 1px 1px $midlightColor;
             border-radius: 10px;
             margin-top: 10px;
             &:hover{
@@ -80,16 +89,19 @@
         
         button{
          width: 30%;
-         height: 3vw;
+         height: 2.5vw;
          display: flex;
          align-items: center;
          justify-content: center;
          border-radius: 10px;
          background-color: $lightColor;
-         border: 3px solid $midlightColor;
-         box-shadow:  0 0 5px 1px $midlightColor;
+         box-shadow:  0 0 px 1px $midlightColor;
          color: $darkColor;
 
+         @media (min-width:$big-screen) {
+            width: 30%;
+            height: 3vw;
+         }
           &:last-child{
             background-color: #4267B2;
             color: white;

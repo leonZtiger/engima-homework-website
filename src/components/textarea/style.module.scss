@@ -6,14 +6,16 @@
 }
 
 .container {
-    padding: 52px;
-    width: 70%;
-    height: 100vh;
+    padding: 3vw;
+    width: 45vw;
+    height: 60vw;
     display: flex;
     flex-direction: column;
-    row-gap: 50px;
+    row-gap: 2vw;
     background-color: $lightColor;
-
+    display: flex;
+    align-items: center;
+    
     @media (min-width:$big-screen) {
         padding: 50px;
     }
@@ -21,17 +23,6 @@
         width: 100%;
         position: relative;
         height: fit-content;
-
-        h2 {
-            position: absolute;
-            left: calc(100% + 10px);
-            top: -3px;
-            margin: 0;
-            padding: 0;
-            background-color: $midlightColor;
-            padding: 5px;
-            font-weight: 300;
-        }
 
         h3 {
             position: absolute;
@@ -42,6 +33,11 @@
             background-color: $midlightColor;
             padding: 5px;
             font-weight: 300;
+            font-size: 1vw;
+
+            @media (min-width:$big-screen) {
+                 font-size: 0.8vw;
+            }
         }
 
         mark {
@@ -55,7 +51,7 @@
             width: 100%;
             top: 0;
             left: 0;
-            font-size: 20px;
+            font-size: 14px;
             font-family: sans-serif;
             opacity: 0;
             padding: 5px;

@@ -6,7 +6,7 @@ const admin = require("firebase-admin");
 const app = express();
 app.use(cors({ origin: true }));
 
-const memberships = {
+const membershipsRef = {
   gold: {
     maxInvocationsPerMonth: 50
   },
