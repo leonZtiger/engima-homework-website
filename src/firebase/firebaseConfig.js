@@ -15,7 +15,7 @@ const firebaseConfig = {
 
     storageBucket: "enigma-homework.appspot.com",
 
-    messagingSenderId: "593199837146",
+    messagingSenderId: "",
 
     appId: "",
 
